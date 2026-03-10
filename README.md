@@ -10,6 +10,11 @@ This repository contains a Claude Code skill focused on **knowledge organization
 English:
 A Claude Code skill for turning Bilibili videos, playlists, multi-part series, favorites, or subtitle files into structured knowledge outputs. It always creates a base `notes` document first, then adds views like `glossary`, `timeline`, `compare`, or Obsidian `.canvas` maps when useful.
 
+<p align="center">
+  <img src="./assets/preview-notes.svg" alt="Structured notes preview" width="48%" />
+  <img src="./assets/preview-canvas.svg" alt="Canvas map preview" width="48%" />
+</p>
+
 ## Preview
 
 Example outputs live in [`examples/sample-notes.md`](./examples/sample-notes.md) and [`examples/sample-topic-map.canvas`](./examples/sample-topic-map.canvas).
@@ -47,6 +52,36 @@ Track which claims stay stable and which ones change as the series develops.
   ]
 }
 ```
+
+## Real Workflow
+
+This is the intended end-to-end flow for a typical multi-video series:
+
+### Input
+
+```text
+整理这个 B站合集，先做完整 notes，如果合适再推荐 glossary 或 visual：
+https://space.bilibili.com/<user-id>/lists/<season-id>?type=season
+```
+
+### What the skill does
+
+1. Uses `bili` CLI to fetch video metadata and subtitles
+2. Builds one shared knowledge structure across the full series
+3. Generates a base `notes` document first
+4. Recommends extra outputs such as `glossary`, `timeline`, or `visual` when the material supports them
+
+### Typical output set
+
+- One composite `notes` document for the series
+- Source references preserved as BV links, part markers, or timestamps
+- Optional `visual` output as an Obsidian `.canvas` topic map
+- Optional `glossary` when the material is concept-heavy
+
+### Example result shape
+
+- [`examples/sample-notes.md`](./examples/sample-notes.md)
+- [`examples/sample-topic-map.canvas`](./examples/sample-topic-map.canvas)
 
 ## Why This Exists
 
@@ -200,6 +235,9 @@ bilibili-transcript-organizer/
 ├── SKILL.md
 ├── README.md
 ├── LICENSE
+├── assets/
+│   ├── preview-canvas.svg
+│   └── preview-notes.svg
 ├── examples/
 │   ├── sample-notes.md
 │   └── sample-topic-map.canvas
@@ -212,6 +250,8 @@ bilibili-transcript-organizer/
 ## Files
 
 - `SKILL.md`: main skill instructions
+- `assets/preview-notes.svg`: README visual preview for structured notes
+- `assets/preview-canvas.svg`: README visual preview for `.canvas` maps
 - `examples/sample-notes.md`: public sample of a structured note output
 - `examples/sample-topic-map.canvas`: public sample of a visual output
 - `references/modes.md`: mode semantics, fallback rules, delivery pattern
