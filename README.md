@@ -1,14 +1,10 @@
 # bilibili-transcript-organizer
 
+[中文说明](./README.zh-CN.md)
+
 Turn Bilibili videos, playlists, multi-part series, favorites, or subtitle files into structured knowledge outputs.
 
 This repository contains a Claude Code skill focused on **knowledge organization**, not content rewriting. It keeps source attribution, supports multi-video synthesis, and can output Markdown notes plus Obsidian `.canvas` maps.
-
-中文简介：
-把 B 站视频、合集、分 P、收藏夹或字幕文件整理成可检索、可沉淀、可引用的知识材料。它默认先产出 `notes`，再按内容特征补充 `glossary`、`timeline`、`compare`、`visual` 等附加视图，适合 Obsidian 和通用 Markdown 知识管理流程。
-
-English:
-A Claude Code skill for turning Bilibili videos, playlists, multi-part series, favorites, or subtitle files into structured knowledge outputs. It always creates a base `notes` document first, then adds views like `glossary`, `timeline`, `compare`, or Obsidian `.canvas` maps when useful.
 
 <p align="center">
   <img src="./assets/preview-notes.svg" alt="Structured notes preview" width="48%" />
@@ -60,7 +56,7 @@ This is the intended end-to-end flow for a typical multi-video series:
 ### Input
 
 ```text
-整理这个 B站合集，先做完整 notes，如果合适再推荐 glossary 或 visual：
+Organize this Bilibili series into full notes first, then recommend glossary or visual output if useful:
 https://space.bilibili.com/<user-id>/lists/<season-id>?type=season
 ```
 
@@ -196,23 +192,23 @@ If you do not want to install the CLI, you can still use local `.srt`, `.txt`, o
 ## Example Prompts
 
 ```text
-整理这个 B站视频：BV1ABcsztEcY
+Organize this Bilibili video: BV1ABcsztEcY
 ```
 
 ```text
-把这 3 个 B站视频按 compare 模式整理，重点看观点分歧
+Compare these 3 Bilibili videos and focus on where their arguments diverge
 ```
 
 ```text
-把这个合集整理成 glossary，输出关键术语和首次出现位置
+Turn this playlist into a glossary and list key terms with where they first appear
 ```
 
 ```text
-把这个系列整理成 visual 模式，做一个 canvas 主题图
+Turn this series into a visual mode output and build a canvas topic map
 ```
 
 ```text
-我有一些导出的字幕文件，按 cards 模式整理成知识卡片
+I have exported subtitle files. Turn them into atomic knowledge cards
 ```
 
 ## Multi-Video Behavior
@@ -234,6 +230,7 @@ There is no hard limit on number of documents or note length. Output structure s
 bilibili-transcript-organizer/
 ├── SKILL.md
 ├── README.md
+├── README.zh-CN.md
 ├── LICENSE
 ├── assets/
 │   ├── preview-canvas.svg
@@ -250,6 +247,7 @@ bilibili-transcript-organizer/
 ## Files
 
 - `SKILL.md`: main skill instructions
+- `README.zh-CN.md`: Chinese README
 - `assets/preview-notes.svg`: README visual preview for structured notes
 - `assets/preview-canvas.svg`: README visual preview for `.canvas` maps
 - `examples/sample-notes.md`: public sample of a structured note output
