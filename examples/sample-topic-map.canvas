@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "topic",
+      "type": "text",
+      "x": 420,
+      "y": 160,
+      "width": 280,
+      "height": 120,
+      "text": "Series Core Topic"
+    },
+    {
+      "id": "history",
+      "type": "text",
+      "x": 80,
+      "y": 80,
+      "width": 240,
+      "height": 100,
+      "text": "Historical Context"
+    },
+    {
+      "id": "mechanism",
+      "type": "text",
+      "x": 80,
+      "y": 280,
+      "width": 240,
+      "height": 100,
+      "text": "Mechanism and Causality"
+    },
+    {
+      "id": "actors",
+      "type": "text",
+      "x": 800,
+      "y": 80,
+      "width": 240,
+      "height": 100,
+      "text": "Key Actors"
+    },
+    {
+      "id": "effects",
+      "type": "text",
+      "x": 800,
+      "y": 280,
+      "width": 240,
+      "height": 100,
+      "text": "Cross-Video Effects"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "fromNode": "topic",
+      "toNode": "history"
+    },
+    {
+      "id": "edge-2",
+      "fromNode": "topic",
+      "toNode": "mechanism"
+    },
+    {
+      "id": "edge-3",
+      "fromNode": "topic",
+      "toNode": "actors"
+    },
+    {
+      "id": "edge-4",
+      "fromNode": "topic",
+      "toNode": "effects"
+    }
+  ]
+}
